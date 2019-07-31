@@ -91,14 +91,16 @@ resources: {}
 #    memory: 256Mi
 #    cpu: 256m
 
-## Configure a HorizontalPodAutoscaler for pod autoscaling
-## Requires that resources requests are set above
+## Configure a HorizontalPodAutoscaler for pod autoscaling.
+## Requires that resources requests are set above.
 autoscaling:
   enabled: false
-#    minReplicas: 1
-#    maxReplicas: 3
-#    targetCPUUtilizationPercentage: 50
-#    targetMemoryUtilizationPercentage: 50
+#  minReplicas: 1
+#  maxReplicas: 3
+## Only one of target CPU and Memory are required to enable the HPA.
+## The ideal target varies and depends on gcloud-sqlproxy usage. 
+#  targetCPUUtilizationPercentage: 50
+#  targetMemoryUtilizationPercentage: 50
 
 ## Node selector
 nodeSelector: {}
